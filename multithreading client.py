@@ -1,11 +1,18 @@
 import PySimpleGUI as sg
-sg.theme('DarkAmber')
 import socket
 
+sg.theme('DarkAmber')
 layout_c = [
-    [sg.Text("A sample UI for Client sending and receiving messages.",size=(80, 2),font=(20)),],
-    [sg.Button('SEND',size=(80, 2),enable_events=True, key="-SNDC-",font=(40)),],
-    [sg.Text('Enter message for Server : ',size=(40, 2),font=(20)), sg.InputText(size=(40, 2),enable_events=True, key="-MSGC-",font=(20))]
+    [
+        sg.Text("A sample UI for Client sending and receiving messages.",size=(80, 2),font=(20)),
+    ],
+    [
+        sg.Button('SEND',size=(80, 2),enable_events=True, key="-SNDC-",font=(40)),
+    ],
+    [
+        sg.Text('Enter message for Server : ',size=(40, 2),font=(20)), 
+        sg.InputText(size=(40, 2),enable_events=True, key="-MSGC-",font=(20))
+    ]
 ]
 
 def main():

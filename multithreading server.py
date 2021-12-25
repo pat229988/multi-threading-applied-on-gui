@@ -1,11 +1,12 @@
 import PySimpleGUI as sg
-sg.theme('DarkAmber')
 import threading
 from _thread import *
 import socket
 ServerSocket = socket.socket()
 host = '127.0.0.1'
 port = 1233
+
+sg.theme('DarkAmber')
 layout = [
     [sg.Text("A sample UI for servers sending and receiving messages.",size=(80, 2),font=(20)),],
     [sg.Button('REFRESH',size=(80, 2),enable_events=True, key="-RF-",font=(40)),],
@@ -28,8 +29,6 @@ def main():
         window.Element('-TB-').update(value = dt)
         print(data.decode('utf-8'))
         Client.close()
-        
-
     while True:
         event, values = window.read()
         thread = threading.Thread(target=s_changes)
